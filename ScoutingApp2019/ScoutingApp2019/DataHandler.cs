@@ -65,7 +65,7 @@ namespace ScoutingApp2019 {
 		/// <param name="dbName">Name of SQLite file.</param>
 		public DataHandler(string filePath, string fileName) {
 			_filePath = filePath;
-			_fileName = BluetoothAdapter.DefaultAdapter.Name + " " + fileName;
+			_fileName = fileName + "_" + BluetoothAdapter.DefaultAdapter.Name.Replace(' ', '_');
 			if (!Directory.Exists("/storage/emulated/0/Download/ScoutingData"))
 				Directory.CreateDirectory("/storage/emulated/0/Download/ScoutingData");
 			if (!File.Exists(_filePath + _fileName + ".sqlite")) {
